@@ -1,0 +1,42 @@
+{
+  "name": "lead_enrichment_v1",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "company_name": { "type": "string" },
+      "is_business_email": { "type": "boolean" },
+      "estimated_company_size": { "type": "string" },
+      "icp_match_score": {
+        "type": "integer",
+        "description": "Score from 1 to 10 indicating ICP fit."
+      },
+      "urgency_level": {
+        "type": "string",
+        "enum": ["High", "Medium", "Low"]
+      },
+      "key_pain_points": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "recommended_pitch": { "type": "string" },
+      "assigned_tier": {
+        "type": "string",
+        "enum": ["Enterprise Tier", "Mid-Market", "Self-Serve / Low Priority", "Review Required"]
+      },
+      "data_quality_notes": { "type": "string" }
+    },
+    "required": [
+      "company_name",
+      "is_business_email",
+      "estimated_company_size",
+      "icp_match_score",
+      "urgency_level",
+      "key_pain_points",
+      "recommended_pitch",
+      "assigned_tier",
+      "data_quality_notes"
+    ],
+    "additionalProperties": false
+  }
+}

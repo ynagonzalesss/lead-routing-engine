@@ -1,0 +1,73 @@
+{
+  "name": "lead_signals_v2",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "company_name": { "type": "string" },
+      "industry": {
+        "type": "string",
+        "enum": ["b2b_saas", "fintech", "digital_agency", "other", "unknown"]
+      },
+      "company_size_band": {
+        "type": "string",
+        "enum": ["1-19", "20-99", "100-500", "501+", "unknown"]
+      },
+      "pain_point_tags": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": ["manual_workflows", "scaling_sales_ops", "data_silos", "slow_lead_response"]
+        }
+      },
+      "key_pain_points": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "urgency": {
+        "type": "string",
+        "enum": ["high", "medium", "low", "unknown"]
+      },
+      "has_evaluation_timeline": { "type": "boolean" },
+      "evidence": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "signal": {
+              "type": "string",
+              "enum": ["industry", "company_size", "pain_point", "urgency", "timeline"]
+            },
+            "quote": { "type": "string" }
+          },
+          "required": ["signal", "quote"],
+          "additionalProperties": false
+        }
+      },
+      "confidence": {
+        "type": "string",
+        "enum": ["high", "medium", "low"]
+      },
+      "prompt_injection_detected": { "type": "boolean" },
+      "is_spam_or_garbage": { "type": "boolean" },
+      "recommended_pitch": { "type": "string" },
+      "data_quality_notes": { "type": "string" }
+    },
+    "required": [
+      "company_name",
+      "industry",
+      "company_size_band",
+      "pain_point_tags",
+      "key_pain_points",
+      "urgency",
+      "has_evaluation_timeline",
+      "evidence",
+      "confidence",
+      "prompt_injection_detected",
+      "is_spam_or_garbage",
+      "recommended_pitch",
+      "data_quality_notes"
+    ],
+    "additionalProperties": false
+  }
+}

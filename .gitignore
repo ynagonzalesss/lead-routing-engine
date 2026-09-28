@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+.DS_Store
+
+# Eval outputs are generated locally when you run `make eval`; commit only
+# the ones you choose to publish as evidence, under results/published/.
+results/*
+!results/.gitkeep
+!results/published/

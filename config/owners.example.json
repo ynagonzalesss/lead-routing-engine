@@ -1,0 +1,9 @@
+{
+  "strategy": "stable_hash",
+  "pools": {
+    "enterprise": ["ae.enterprise.1", "ae.enterprise.2"],
+    "mid_market": ["ae.midmarket.1", "ae.midmarket.2", "ae.midmarket.3"],
+    "smb": ["ae.smb.1", "ae.smb.2"],
+    "unassigned": ["ae.triage.1"]
+  }
+}
